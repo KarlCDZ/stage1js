@@ -1,0 +1,53 @@
+.inv {
+  margin: auto;
+  width: 50%;
+}
+.highlight-true {
+  background-color: lightgreen;
+}
+.highlight-false {
+  background-color: lightgray;
+}
+.header {
+  margin: auto;
+  width: 400px;
+  background: lightblue;
+  height: 100px;
+}
+
+.title {
+  padding-top: 10px;
+  padding-left: 50px;
+  font-size: larger;
+  font-weight: bold;
+}
+.listSelect {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: ghostwhite;
+}
+.listbutton {
+  width: 200px;
+  height: 50px;
+  text-align: left;
+  border: 0;
+  margin: 10px;
+  flex-direction: column;
+  padding: 10px;
+}
+.list {
+  background-color: ghostwhite;
+  padding: 10px 0;
+}
+.item {
+  margin: auto;
+  width: 80%;
+  height: 30px;
+  list-style: none;
+  border: 1px;
+  border-style: solid;
+}
+
+.hidden {
+  display: none;
+}
