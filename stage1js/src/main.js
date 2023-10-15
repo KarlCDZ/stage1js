@@ -21,13 +21,13 @@ const lists = [
 
 const buttongroup = document.getElementById("buttongroup");
 
-const listsect = document.getElementById("list");
-const listnum = document.getElementById("listnum");
+const listsect = document.getElementById("itemlist");
+const listnum = document.getElementById("listlength");
 
 function addbuttons (lists) {
     for (let i=0; i< lists.length; i++) {
         let button = document.createElement('button');
-        button.className = "listbutton highlight-false";
+        button.className = "highlight-false";
         button.innerText = `(${i+1}) ` + lists[i].name;
         button.addEventListener("click", () => {
             const listButtons = buttongroup.children;
@@ -39,7 +39,7 @@ function addbuttons (lists) {
         });
         buttongroup.appendChild(button);
     }
-    console.log(lists);
+    // console.log(lists);
 }
 
 function addli(itemlist) {
@@ -47,7 +47,7 @@ function addli(itemlist) {
     listnum.innerText = `List (${itemlist.length})`;
     for (let i = 0; i < itemlist.length; i++) {
         let li = document.createElement('li');
-        li.className = "item highlight-false";
+        li.className = "highlight-false";
         li.addEventListener("click", () => {
             if (li.className.includes('highlight-false')) {
                 li.className = li.className.replace('highlight-false', 'highlight-true');

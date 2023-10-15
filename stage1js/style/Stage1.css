@@ -26,7 +26,7 @@
   justify-content: space-evenly;
   background-color: ghostwhite;
 }
-.listbutton {
+.listSelect button {
   width: 200px;
   height: 50px;
   text-align: left;
@@ -35,19 +35,15 @@
   flex-direction: column;
   padding: 10px;
 }
-.list {
+.itemlist {
   background-color: ghostwhite;
   padding: 10px 0;
 }
-.item {
+.itemlist li {
   margin: auto;
   width: 80%;
   height: 30px;
   list-style: none;
   border: 1px;
   border-style: solid;
-}
-
-.hidden {
-  display: none;
 }
