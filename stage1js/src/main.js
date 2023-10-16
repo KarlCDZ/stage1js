@@ -35,14 +35,14 @@ function addbuttons (lists) {
                 listButtons[i].className = listButtons[i].className.replace('highlight-true', 'highlight-false');
             }
             button.className = button.className.replace('highlight-false', 'highlight-true');
-            addli(lists[i].item);
+            listAdditem(lists[i].item);
         });
         buttongroup.appendChild(button);
     }
     // console.log(lists);
 }
 
-function addli(itemlist) {
+function listAdditem(itemlist) {
     listsect.innerHTML = `<ul></ul>`;
     listnum.innerText = `List (${itemlist.length})`;
     for (let i = 0; i < itemlist.length; i++) {
