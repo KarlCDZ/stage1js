@@ -2,7 +2,7 @@ const lists = [
     {
         name: 'Vegetable',
         item: [
-            'Carrot','Cucumber'
+            'Carrot', 'Cucumber'
         ]
     },
     {
@@ -19,50 +19,57 @@ const lists = [
     }
 ];
 
-const buttongroup = document.getElementById("buttongroup");
+const buttonGroup = document.getElementById('buttongroup');
 
-const listsect = document.getElementById("itemlist");
-const listnum = document.getElementById("listlength");
+const listSect = document.getElementById('itemlist');
+const listNum = document.getElementById('listlength');
 
-function addbuttons (lists) {
-    for (let i=0; i< lists.length; i++) {
+function addButton (lists) {
+    for (let i = 0; i < lists.length; i++) {
         let button = document.createElement('button');
-        button.className = "highlight-false";
-        button.innerText = `(${i+1}) ` + lists[i].name;
-        button.addEventListener("click", () => {
-            const listButtons = buttongroup.children;
-            for (let i = 0; i < listButtons.length; i++) {
-                listButtons[i].className = listButtons[i].className.replace('highlight-true', 'highlight-false');
-            }
-            button.className = button.className.replace('highlight-false', 'highlight-true');
-            listAdditem(lists[i].item);
-        });
-        buttongroup.appendChild(button);
+        button.className = 'nonactive';
+        button.innerText = `(${i + 1}) ` + lists[i].name;
+        button.onclick = function () {
+            buttonSwitch(button, lists[i].item);
+        }
+        console.log(button);
+        buttonGroup.appendChild(button);
     }
     // console.log(lists);
 }
 
-function listAdditem(itemlist) {
-    listsect.innerHTML = `<ul></ul>`;
-    listnum.innerText = `List (${itemlist.length})`;
+function buttonSwitch (clicked, itemList) {
+    const listButtons = buttonGroup.children;
+    for (let i = 0; i < listButtons.length; i++) {
+        listButtons[i].className = 'nonactive';
+    }
+    clicked.className = 'active';
+    listAdditem(itemList);
+}
+
+function listAdditem (itemlist) {
+    listSect.innerHTML = `<ul></ul>`;
+    listNum.innerText = `List (${itemlist.length})`;
     for (let i = 0; i < itemlist.length; i++) {
         let li = document.createElement('li');
-        li.className = "highlight-false";
-        li.addEventListener("click", () => {
-            if (li.className.includes('highlight-false')) {
-                li.className = li.className.replace('highlight-false', 'highlight-true');
-            }
-            else {
-                li.className = li.className.replace('highlight-true', 'highlight-false');
-            }
-        });
+        li.className = 'nonactive';
         li.innerText = itemlist[i];
-        listsect.appendChild(li);
+        listSect.appendChild(li);
     }
 }
 
+listSect.addEventListener("click", (e) => {
+    if (e.target.className.includes('nonactive')) {
+        e.target.className = 'active';
+    }
+    else {
+        e.target.className = 'nonactive';
+    }
+})
+
 // onload press veg for default
 document.body.onload = function () {
-    addbuttons(lists);
-    buttongroup.children[0].click();
+    addButton(lists);
+    buttonGroup.children[0].click();
+    console.log(buttonGroup.children[0]);
 }

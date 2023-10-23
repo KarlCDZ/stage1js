@@ -1,32 +1,29 @@
-.inv {
+div.inv {
   margin: auto;
   width: 50%;
 }
-.highlight-true {
-  background-color: lightgreen;
-}
-.highlight-false {
-  background-color: lightgray;
-}
-.header {
+
+div.header {
   margin: auto;
   width: 400px;
   background: lightblue;
   height: 100px;
 }
 
-.title {
+p.title {
   padding-top: 10px;
   padding-left: 50px;
   font-size: larger;
   font-weight: bold;
 }
+
 div.listSelect {
   display: flex;
   justify-content: space-evenly;
   background-color: ghostwhite;
 }
-div.listSelect button {
+
+div.listSelect button.active {
   width: 200px;
   height: 50px;
   text-align: left;
@@ -34,16 +31,41 @@ div.listSelect button {
   margin: 10px;
   flex-direction: column;
   padding: 10px;
+  background-color: lightgreen;
 }
+
+div.listSelect button.nonactive {
+  width: 200px;
+  height: 50px;
+  text-align: left;
+  border: 0;
+  margin: 10px;
+  flex-direction: column;
+  padding: 10px;
+  background-color: lightgray;
+}
+
 ul.itemlist {
   background-color: ghostwhite;
   padding: 10px 0;
 }
-ul.itemlist li {
+
+ul.itemlist li.nonactive {
   margin: auto;
   width: 80%;
   height: 30px;
   list-style: none;
   border: 1px;
   border-style: solid;
+  background-color: lightgray;
+}
+
+ul.itemlist li.active {
+  margin: auto;
+  width: 80%;
+  height: 30px;
+  list-style: none;
+  border: 1px;
+  border-style: solid;
+  background-color: lightgreen;
 }
