@@ -34,7 +34,7 @@ div.listSelect button.active {
   background-color: lightgreen;
 }
 
-div.listSelect button.nonactive {
+div.listSelect button.inactive {
   width: 200px;
   height: 50px;
   text-align: left;
@@ -50,7 +50,7 @@ ul.itemlist {
   padding: 10px 0;
 }
 
-ul.itemlist li.nonactive {
+ul.itemlist li.inactive {
   margin: auto;
   width: 80%;
   height: 30px;
