@@ -71,5 +71,4 @@ listSect.addEventListener("click", (e) => {
 document.body.onload = function () {
     addButton(lists);
     buttonGroup.children[0].click();
-    console.log(buttonGroup.children[0]);
 }
