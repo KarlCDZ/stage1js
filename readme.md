@@ -1,4 +1,4 @@
-`$ npx http-server frontend -c 1 -p [port]`
+`$ npx http-server stage1js -c 1 -p [port]`
 
 Where `[port]` is the port you want to run the server on (e.g. `8080`). Any number is fine.
 
